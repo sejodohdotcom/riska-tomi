@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Bestermind';
+    src: url('BestermindRegular.eot');
+    src: url('BestermindRegular.eot?#iefix') format('embedded-opentype'),
+        url('BestermindRegular.woff2') format('woff2'),
+        url('BestermindRegular.woff') format('woff'),
+        url('BestermindRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
