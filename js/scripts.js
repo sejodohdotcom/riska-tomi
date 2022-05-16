@@ -78,13 +78,13 @@ $(document).ready(function() {
 
     // $(this).scrollTop(0);
 
-    // var sound = new Howl({
-    //     src: ['./assets/song.mp3'],
-    //     autoplay: true,
-    //     loop: true,
-    // });
+    var sound = new Howl({
+        src: ['./assets/song.mp3'],
+        autoplay: true,
+        loop: true,
+    });
 
-    //   sound.play();
+      sound.play();
 
     document.addEventListener("keydown", function(event) {
         var key = event.key || event.keyCode;
