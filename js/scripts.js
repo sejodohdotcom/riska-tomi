@@ -85,7 +85,6 @@ $(document).ready(function() {
     });
 
       sound.play();
-
     document.addEventListener("keydown", function(event) {
         var key = event.key || event.keyCode;
 
