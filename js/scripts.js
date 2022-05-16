@@ -72,24 +72,19 @@ $(document).ready(function() {
         once: true
     });
 
-    document.querySelector("#share-lock").onclick = function() {
-        window.open('https://goo.gl/maps/rbQJHsVysvg3b53L7', '_blank'); 
-    };
+    // document.querySelector("#share-lock").onclick = function() {
+    //     window.open('https://goo.gl/maps/rbQJHsVysvg3b53L7', '_blank'); 
+    // };
 
     // $(this).scrollTop(0);
 
-    var sound = new Howl({
-        src: ['./assets/song.mp3'],
-        autoplay: true,
-        loop: true,
-    });
+    // var sound = new Howl({
+    //     src: ['./assets/song.mp3'],
+    //     autoplay: true,
+    //     loop: true,
+    // });
 
-      sound.play();
-
-    $('#btn-scroll').on('click', function(e) {
-        e.preventDefault();
-        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
-      });
+    //   sound.play();
 
     document.addEventListener("keydown", function(event) {
         var key = event.key || event.keyCode;
@@ -279,52 +274,52 @@ $(document).ready(function() {
     });
 
     //send rsvp
-    var form_rsvp = document.getElementById('form-rsvp');
-    document.getElementById("send-rsvp").addEventListener("click", (e) => {
+    // var form_rsvp = document.getElementById('form-rsvp');
+    // document.getElementById("send-rsvp").addEventListener("click", (e) => {
 
         
-        if (document.getElementById('name_input').value != '' &&
-            document.getElementById('address').value != '') {
+    //     if (document.getElementById('name_input').value != '' &&
+    //         document.getElementById('address').value != '') {
 
-                $("#send-rsvp").addClass("disabled");
-            $("#error-text-rsvp").html('');
+    //             $("#send-rsvp").addClass("disabled");
+    //         $("#error-text-rsvp").html('');
 
-            var request = new XMLHttpRequest();
-            var formData = new FormData(form_rsvp);
+    //         var request = new XMLHttpRequest();
+    //         var formData = new FormData(form_rsvp);
 
-            var url = "https://api.npoint.io/7b2426d35afbafd228c6";
+    //         var url = "https://api.npoint.io/7b2426d35afbafd228c6";
 
-            request.open('POST', url, /* async = */ false);
-            request.setRequestHeader('Content-Type', 'application/json');
+    //         request.open('POST', url, /* async = */ false);
+    //         request.setRequestHeader('Content-Type', 'application/json');
 
-            request.onloadend = function() {
-                if (request.status != 200) { // analyze HTTP status of the response
-                    alert(`Error ${request.status}: ${request.statusText}`); // e.g. 404: Not Found
-                } else { // show the result
-                    $("#send-rsvp").removeClass("disabled");
-                    $("#rsvp-box .card-body").html("<span class='card-title italino txt-shadow white'>Thank you for submitting the response!</span>");
-                    sweetAlert(
-                        'Thank you!',
-                        'Your response has been sent successfully!',
-                        'success'
-                    );
-                    form_rsvp.reset(); //reset form after AJAX success or do something else
-                    var data = JSON.parse(this.responseText);
+    //         request.onloadend = function() {
+    //             if (request.status != 200) { // analyze HTTP status of the response
+    //                 alert(`Error ${request.status}: ${request.statusText}`); // e.g. 404: Not Found
+    //             } else { // show the result
+    //                 $("#send-rsvp").removeClass("disabled");
+    //                 $("#rsvp-box .card-body").html("<span class='card-title italino txt-shadow white'>Thank you for submitting the response!</span>");
+    //                 sweetAlert(
+    //                     'Thank you!',
+    //                     'Your response has been sent successfully!',
+    //                     'success'
+    //                 );
+    //                 form_rsvp.reset(); //reset form after AJAX success or do something else
+    //                 var data = JSON.parse(this.responseText);
 
-                }
-            };
+    //             }
+    //         };
 
-            var latestData = JSON.parse(localStorage.getItem("RSVPData"));
-            latestData.data_invitee.push(Object.fromEntries(formData));
-            request.send(JSON.stringify(latestData));
-            localStorage.setItem("RSVPData", JSON.stringify(latestData));
+    //         var latestData = JSON.parse(localStorage.getItem("RSVPData"));
+    //         latestData.data_invitee.push(Object.fromEntries(formData));
+    //         request.send(JSON.stringify(latestData));
+    //         localStorage.setItem("RSVPData", JSON.stringify(latestData));
 
-        } else {
+    //     } else {
 
-            $("#error-text-rsvp").html('* Insert your name and address');
+    //         $("#error-text-rsvp").html('* Insert your name and address');
 
-        }
+    //     }
 
-    });
+    // });
 
 });

@@ -11,7 +11,9 @@
 .bold {
     font-weight: bold;
 }
-
+.wb {
+    font-family: 'Water Brush', cursive;
+}
 .black {
     font-weight: 900;
 }
@@ -67,6 +69,9 @@
     opacity: 0.3;
     pointer-events: none;
 }
+.pyc-6 {
+    padding: 6rem 0;
+}
 .gold {
     color: #A28454 !important;
 }
@@ -79,9 +84,12 @@
 }
 .bg-image-full {
     height: 100vh;
-    background-image: -o-linear-gradient(165deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%) !important;    
-    background-image: linear-gradient(285deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%) !important;
-    background-image: -webkit-linear-gradient(165deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%) !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(linear,left top, left bottom,color-stop(25%, rgba(255,255,255,0)),color-stop(95%, #A28454)), url(../assets/main-bg.jpg) !important;    
+    background-image: -o-linear-gradient(top,rgba(255,255,255,0) 25%,#A28454 95%), url(../assets/main-bg.jpg) !important;    
+    background-image: linear-gradient(180deg,rgba(255,255,255,0) 25%,#A28454 95%), url(../assets/main-bg.jpg) !important;
 }
 
 .text-full {
@@ -89,7 +97,7 @@
     width: 100%;
     margin: 0;
     position: absolute;
-    top: 50%;
+    bottom: 0;
     left: 50%;
     -webkit-transform: translate(-50%, -100%);
     -ms-transform: translate(-50%, -100%);
@@ -99,11 +107,11 @@
 .spacing-text {
     letter-spacing: 0.2rem;
 }
-.doa-wrapper {
-    margin: 6rem auto;
+.doa-background {
+    background-color: #A28454;
 }
 .doa-wrapper .ornament-wrapper.top {
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 1rem auto;
 }
 
 .doa-wrapper .ornament-wrapper.bottom {
@@ -179,9 +187,13 @@
 }
 
 .count-down-wrapper {
-    background-image: -o-linear-gradient(165deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%) !important;    
-    background-image: linear-gradient(285deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%) !important;
-    background-image: -webkit-linear-gradient(165deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%) !important;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: -o-linear-gradient(165deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%), url(../assets/tes-log.jpg) !important;    
+    background-image: linear-gradient(285deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%), url(../assets/tes-log.jpg) !important;
+    background-image: -webkit-linear-gradient(165deg, rgba(231,224,212,1) 0%, rgba(201,178,125,0.5) 0%), url(../assets/tes-log.jpg) !important;
 }
 
 .count-down-wrapper .text-full-2 {
@@ -450,33 +462,7 @@
     position: relative;
     z-index: 1;
 }
-#section10 a {
-  padding-top: 60px;
-}
-#section10 a span {
-    position: absolute;
-    left: 50%;
-    width: 30px;
-    height: 50px;
-    margin-left: -15px;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    box-sizing: border-box;
-}
-#section10 a span::before {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  content: '';
-  width: 6px;
-  height: 6px;
-  margin-left: -3px;
-  background-color: #fff;
-  border-radius: 100%;
-  -webkit-animation: sdb10 2s infinite;
-  animation: sdb10 2s infinite;
-  box-sizing: border-box;
-}
+
 @-webkit-keyframes sdb10 {
   0% {
     -webkit-transform: translate(0, 0);
@@ -624,22 +610,52 @@
     background-color: #f5f5f5;
     border-radius: 5px;
 }
+.couple-text h1, .timeline h1 {
+    font-size: 40px;
+    padding: 0.5rem 0;
+}
 /* You just need to get this field */
-
+.wedding-gift .btn-box img {
+    width: 28px;
+    height: auto;
+}
+.wedding-gift .btn-box {
+    background: -o-linear-gradient(5.75deg, #C3A87C 1.64%, #816434 100%);
+    background: linear-gradient(84.25deg, #C3A87C 1.64%, #816434 100%);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+.btn-copy {
+    border: solid 2px #A28454;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #66491A;
+    font-weight: bold;
+}
+.btn-copy:focus {
+    outline: none;
+    box-shadow: none;
+}
+.btn-copy:hover {
+    color: #66491A;
+}
 @media only screen and (max-width: 767px) {
     html,
     body {
         overflow-x: hidden;
+    }
+    .card-title {
+        font-size: 40px;
     }
     .section-text-1 p {
         font-size: 14px;
     }
     .text-full .mid-title {
         font-size: 50px;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
     }
     .doa-wrapper .ornament-wrapper {
-        width: 175px;
+        width: 75px;
     }
     .doa-wrapper .text-doa .arabic {
         font-size: 30px;
@@ -670,9 +686,6 @@
     }
     .covid-alert p.title {
         font-size: 14px;
-    }
-    .card.card-custom .card-body span.card-title {
-        font-size: 45px;
     }
     .card.card-custom .card-body span.card-date {
         font-size: 16px;
@@ -763,12 +776,15 @@
     .section-text-1 p {
         font-size: 20px;
     }
+    .card-title {
+        font-size: 54px;
+    }
     .text-full .mid-title {
         font-size: 65px;
         padding: 1rem 0;
     }
     .doa-wrapper .ornament-wrapper {
-        width: 300px;
+        width: 100px;
     }
     .doa-wrapper .text-doa .arabic {
         font-size: 36px;
